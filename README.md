@@ -1,2 +1,2 @@
-# TemplateRepo
-Leverage template to initiate app with react, express, and mongodb
+# SampleApp
+Sample app with Recall.

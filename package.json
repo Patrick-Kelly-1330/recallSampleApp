@@ -1,7 +1,7 @@
 {
-  "name": "template-repo",
+  "name": "sample-recall-app",
   "version": "1.0.0",
-  "description": "Template to initiate an app",
+  "description": "Sample App Using Recall's APIs",
   "main": "index.js",
   "scripts": {
     "client-dev": "webpack --watch",
