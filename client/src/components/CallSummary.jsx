@@ -13,7 +13,8 @@ const CallSummary = ({ callSummaryInfo }) => {
         <div className="callSummaryScorecardTitle">Key Talking Points Scorecard</div>
         <div className="callSummaryScorecardResults">
           <div className="callSummaryScorecardResultsTitle">Overall</div>
-          <div className="callSummaryScorecardResultsScore">{callSummaryInfo[0].score.toString().replace('0.','')}%</div>
+          {/* <div className="callSummaryScorecardResultsScore">{callSummaryInfo[0].score.toString().replace('0.','')}%</div> */}
+          <div className="callSummaryScorecardResultsScore">{callSummaryInfo[0].score}%</div>
         </div>
       </div>
       <div className="callSummaryTalkingPointsContainer">

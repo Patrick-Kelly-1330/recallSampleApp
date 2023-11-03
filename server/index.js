@@ -66,15 +66,16 @@ app.post('/recallWebhook', (req, res) => {
         }
       })
       .then((recallResponse) => {
+        console.log("ANALYSIS WORDS ", recallResponse.data[0]);
         // Rudimentary tests to determine if specific topics are covered on the call
-        let generalCheckin = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'thank').length > 0;
-        let currentPromotions = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'offer').length > 0;
-        let currentSpend = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'spend').length > 0;
-        let nextSteps = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'steps').length > 0;
+        let generalCheckin = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'thank' || word.text.toLowerCase() === 'thank.').length > 0;
+        let currentPromotions = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'offer' || word.text.toLowerCase() === 'offer.').length > 0;
+        let currentSpend = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'spend' || word.text.toLowerCase() === 'spend.').length > 0;
+        let nextSteps = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'steps' || word.text.toLowerCase() === 'steps.').length > 0;
         let talkingPointsBreakdown = [{'a': generalCheckin.toString()}, {'b': currentPromotions.toString()},{'c': currentSpend.toString()},{'d': nextSteps.toString()}]
 
         // Determine score based on talking points results (true equal to one)
-        let score = (generalCheckin + currentPromotions + currentSpend + nextSteps) / 4;
+        let score = ((generalCheckin + currentPromotions + currentSpend + nextSteps) / 4) * 100;
 
         // update meeting in database with analysis results
         db.updateMeeting(currentMeetingTitle, talkingPointsBreakdown, score)
