@@ -4,6 +4,7 @@
 # Recall Sample App
 
 Sample Sales Tool application leveraging [Recall's API](https://www.recall.ai/). Send the Sales bot to your meeting, end the meeting, then review the bot's analysis of your call. 
+
 ![recallReview](https://github.com/Patrick-Kelly-1330/recallSampleApp/assets/51098314/19f7ea29-47bc-4c37-b78d-4dedf250e037)
 
 ## Installation
@@ -45,6 +46,8 @@ When you first load the home page, you will have access to sample data stored wi
 5/ Open the menu in the top left > select Send Bot
 
 6/ Input meeting link from step 2
+
+(note: you can select any team member from the picklist, this is only present to demonstrate how a team could use this app together).
 
 7/ Select _Send Bot to Meeting_
 
