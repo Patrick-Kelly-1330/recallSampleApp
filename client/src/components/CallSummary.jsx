@@ -6,6 +6,7 @@ const CallSummary = ({ callSummaryInfo }) => {
       <div className="callSummaryTitle">Call Summary</div>
       <div className="callSummaryMetadata">
         <div className="callSummaryMetadataTitle">Call Recording</div>
+        {/* URL present for demonstrative purposes only */}
         <div>https://us04web.zoom.us/j/{callSummaryInfo[0]._id}</div>
       </div>
       <div className="callSummaryScorecardContainer">
@@ -19,7 +20,7 @@ const CallSummary = ({ callSummaryInfo }) => {
         <div className="callSummaryTalkingPointsTitle">Key Talking Points Breakdown</div>
         <div className="callSummaryTalkingPointsResultsContainer">
           <div className="callSummaryIndividualTalkingPointContainer">
-            <div>General Checkin</div>
+            <div>General Check-in</div>
             <div>{callSummaryInfo[0].talkingPointsBreakdown[0].a === 'true' ? <div className="trueResult">covered</div>
             :  <div className="falseResult">not covered</div>}
             </div>

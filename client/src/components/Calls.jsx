@@ -1,7 +1,7 @@
 import React from 'react';
 import CallsList from './CallsList.jsx';
 
-const Calls = ({teamMembers, calls, handleSelectCall}) => {
+const Calls = ({ teamMembers, calls, handleSelectCall }) => {
 
   return (
     <div className="callsContainer">

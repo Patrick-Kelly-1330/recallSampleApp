@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SendBot = ({ teamMembers, setMeetingURL, handleSendBot }) => {
-
   return (
     <div className="sendBotContainer">
       <div className="sendBotContainerRow">
@@ -11,7 +10,7 @@ const SendBot = ({ teamMembers, setMeetingURL, handleSendBot }) => {
             return ( <option value={teamMember} key={teamMember}>{teamMember}</option>)
           })
         : null
-          }
+        }
         </select>
       </div>
       <div className="sendBotContainerRow">

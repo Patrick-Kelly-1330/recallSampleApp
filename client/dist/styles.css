@@ -71,14 +71,14 @@ body {
 
 
 .fa-bars {
-  color: #f7f7f7;
   padding-top: 1.1em;
   padding-right: 1em;
+  color: #f7f7f7;
 }
 
 .fa-bars:hover {
-  cursor: pointer;
   color: #eaeaea;
+  cursor: pointer;
 }
 
 /**********************************
@@ -97,9 +97,9 @@ body {
 */
 
 .callsContainer {
-  width: 35%;
   padding-top: 1em;
   padding-left: 2em;
+  width: 35%;
 }
 
 .teamMembersHeader {
@@ -118,27 +118,27 @@ body {
 }
 
 .individualCallContainer {
+  margin-right: 4em;
+  padding: 1.2em .5em;
   display: flex;
   border: .05em solid #dedede;
   background-color: #fcfcfc;
-  margin-right: 4em;
-  padding: 1.2em .5em;
 }
 
 .individualCallContainer:hover {
-  cursor: pointer;
   background-color: #f7f7f7;
+  cursor: pointer;
 }
 
 .individualCallDate {
-  width: 60%;
   padding-left: 1em;
+  width: 60%;
   font-size: 1.1em;
 }
 
 .individualCallcallName {
-  text-align: center;
   width: 40%;
+  text-align: center;
   font-size: 1.1em;
 }
 
@@ -152,22 +152,22 @@ body {
 */
 
 .callSummaryContainer {
+  margin-right: 2em;
   width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 2em;
 }
 
 .callSummaryTitle {
-  font-size: 2em;
   padding: 0.5em 0 0.5em 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 .callSummaryMetadata {
-  width: 100%;
   padding: 1em 2em;
+  width: 100%;
   display: flex;
   column-gap: 1em;
   border: .05em solid #dedede;
@@ -179,8 +179,8 @@ body {
 }
 
 .callSummaryScorecardContainer {
-  width: 100%;
   padding: 1em 2em;
+  width: 100%;
   border: .05em solid #dedede;
   background-color: #fcfcfc;
   text-align: center;
@@ -213,12 +213,12 @@ body {
 .callSummaryTalkingPointsContainer {
   border-top: none;
   border: .05em solid #dedede;
+  padding: 1em 8em;
   background-color: #fcfcfc;
   width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 1em 8em;
 }
 
 .callSummaryTalkingPointsResultsContainer {
@@ -226,23 +226,23 @@ body {
 }
 
 .callSummaryIndividualTalkingPointContainer {
+  margin: 0.5em 0;
   display: flex;
   font-size: 1.2em;
   justify-content: space-between;
-  margin: 0.5em 0;
 }
 
 .trueResult {
+  border-radius: .5em;
   background-color: #9ac5ff;
   padding: 0.4em 1.2em;
-  border-radius: .5em;
 }
 
 .falseResult {
+  border-radius: .5em;
+  padding: 0.4em 1.2em;
   background-color: #002659;
   color: #f7f7f7;
-  padding: 0.4em 1.2em;
-  border-radius: .5em;
 }
 
 /**********************************
@@ -251,7 +251,7 @@ body {
 */
 
 .sendBotContainer {
-  margin: 1em 28%;
+  margin: 1em 26%;
   border: .05em solid #dedede;
   border-radius: 0.4em;
   padding: 2em 2em 2em 3em;
@@ -270,10 +270,10 @@ body {
 
 .sendBotMeetingLink {
   margin-left: 2.3em;
+  padding: 0.5em 0.4em;
   border: .05em solid #dedede;
   border-radius: 0.4em;
-  width: 30em;
-  padding: 0.5em 0.4em;
+  width: 35em;
 }
 
 .teamMemberList {
@@ -284,10 +284,10 @@ body {
 .sendBotToMeeting {
   width: 15em;
   margin-left: 10em;
-  background-color: #9ac5ff;
-  color: #525252;
   border-radius: 0.5em;
   padding: 1em 2em;
+  background-color: #9ac5ff;
+  color: #525252;
   text-align: center;
 }
 

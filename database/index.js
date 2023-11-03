@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// Optional: change name of default database
 mongoose.connect('mongodb://localhost/recallSampleDatabase');
 
 const db = mongoose.connection;
@@ -11,7 +12,6 @@ const salesMeeting = mongoose.Schema({
   talkingPointsBreakdown: Array,
 });
 
-
 const Meeting = mongoose.model('salesMeetings', salesMeeting);
 
 db.on('error', () => {
@@ -23,6 +23,7 @@ db.once('open', () => {
 });
 
 module.exports = {
+  // add meeting to database
   addMeeting: (meetingTitle, url) => {
     let currentDate = new Date().toString().slice(0,15);
     return Meeting.create({
@@ -31,7 +32,9 @@ module.exports = {
       date: currentDate,
     });
   },
+  // get all meetings from database
   getMeetings: () => Meeting.find({}),
+  // update meeting in database with results of transcript analysis
   updateMeeting: (meetingTitle, results, scoreResults) => {
     return Meeting.updateOne({ callName: meetingTitle }, {
       talkingPointsBreakdown: results,
