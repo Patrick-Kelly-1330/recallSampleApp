@@ -32,9 +32,10 @@ module.exports = {
     });
   },
   getMeetings: () => Meeting.find({}),
-  updateMeeting: (meetingTitle, results) => {
+  updateMeeting: (meetingTitle, results, scoreResults) => {
     return Meeting.updateOne({ callName: meetingTitle }, {
       talkingPointsBreakdown: results,
+      score: scoreResults,
     });
   },
 }

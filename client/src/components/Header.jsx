@@ -1,15 +1,16 @@
 import React from 'react';
 import Menu from './Menu.jsx';
+import BeveragesLogo from '../../dist/beveveragesLogo.png'
 
 const Header = ({ handleMenuClick, handleSetBotVisible, handleSetAdminVisible, menuVisible, handleGetAllMeetings }) => {
 
   return (
     <div className="headerContainer">
       <div className="headerCompanyInfoContainer">
-        <div onClick={handleGetAllMeetings}>SAMPLE LOGO</div>
-        <div>Sample Company Name Sales Training Dashboard</div>
+        <img src={BeveragesLogo} alt="Logo of beverage company" className="logoImage"/>
+        <div>Beverages Unlimited - Sales Training Dashboard</div>
       </div>
-      <div onClick={handleMenuClick}>MENU PLACEHOLDER</div>{
+      <i onClick={handleMenuClick} className="fa-solid fa-bars fa-2xl"></i>{
         menuVisible ?
         <Menu
           handleMenuClick={handleMenuClick}

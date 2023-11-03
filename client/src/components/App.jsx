@@ -47,6 +47,7 @@ const App = () => {
       .catch((err) => console.log('unable to set  ', err));
     })
     .catch((err) => console.log('unable to send bot ', err));
+    setSendBotVisible(false);
   }
 
   const handleSelectCall = (e) => {

@@ -5,7 +5,7 @@ const CallsList = ({calls, handleSelectCall}) => {
 
   return (
     <div className="callsListContainer">
-      <div className="recentCallsHeader title">Recent Calls</div>
+      <div className="recentCallsHeader">Recent Calls</div>
       { calls.length > 0 ?
         calls.map((call) => {
           return <IndividualCall call={call} handleSelectCall={handleSelectCall} key={call.date} />

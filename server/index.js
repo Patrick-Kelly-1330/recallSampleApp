@@ -6,7 +6,8 @@ const db = require('../database');
 
 const app = express();
 const PORT = process.env.PORT || 3000 ;
-// store id and meeting title of most recent bot in the server
+
+// store id and meeting title associated to most recent bot in the server
 let currentBotId = '';
 let currentMeetingTitle = '';
 
@@ -78,9 +79,10 @@ app.post('/recallWebhook', (req, res) => {
         // Next steps review
         let nextSteps = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'steps').length > 0;
         let talkingPointsBreakdown = [{'a': generalCheckin.toString()}, {'b': currentPromotions.toString()},{'c': currentSpend.toString()},{'d': nextSteps.toString()}]
-        // console.log('RESULTS ', generalCheckin, currentPromotions, currentSpend, nextSteps);
-        db.updateMeeting(currentMeetingTitle, talkingPointsBreakdown)
-          .then(() => res.send('updated meeting and completed analysis'))
+        // Determine score based on talking points results
+        let score = (4 - generalCheckin - currentPromotions - currentSpend - nextSteps) / 4;
+        db.updateMeeting(currentMeetingTitle, talkingPointsBreakdown, score)
+          .then(() => res.send('updated meeting with talking point results'))
           .catch((err) => res.send('unable to update meeting and complete analysis'));
       })
       .catch((err) => res.send('unable to get bot transcript'));
@@ -97,9 +99,9 @@ app.post('/recallWebhook', (req, res) => {
   }
 });
 
-// determine if employee covered specific topics on the call
+// TO DELETE TOMORROW determine if employee covered specific topics on the call
 app.get('/analyzeTranscript', (req, res) => {
-  axios.get(`https://api.recall.ai/api/v1/bot/${currentBotId}/transcript`,{
+  axios.get('https://api.recall.ai/api/v1/bot/6a002fed-5688-4f91-952e-285b2fba4add/transcript',{
     headers: {
       "Authorization": 'Token ' + process.env.RECALL,
       "Content-Type": 'application/json',
@@ -116,11 +118,14 @@ app.get('/analyzeTranscript', (req, res) => {
     // Next steps review
     let nextSteps = recallResponse.data[0].words.filter((word) => word.text.toLowerCase() === 'steps').length > 0;
     let talkingPointsBreakdown = [{'a': generalCheckin.toString()}, {'b': currentPromotions.toString()},{'c': currentSpend.toString()},{'d': nextSteps.toString()}]
-    // console.log('RESULTS ', generalCheckin, currentPromotions, currentSpend, nextSteps);
-    db.updateMeeting(currentMeetingTitle, talkingPointsBreakdown)
-      .then(() => res.sendStatus(200))
-      .catch((err) => res.sendStatus(500));
-  })
+    // Determine score based on talking points results
+    let score = (4 - generalCheckin - currentPromotions - currentSpend - nextSteps) / 4;
+        db.updateMeeting('Grand Express', talkingPointsBreakdown, score)
+          .then(() => {
+            res.sendStatus('updated meeting with talking point results')
+          })
+          .catch((err) => res.send('unable to update meeting and complete analysis'));
+      })
   .catch((err) => res.send('unable to get bot transcript'));
 });
 

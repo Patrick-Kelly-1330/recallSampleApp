@@ -1,22 +1,22 @@
 import React from 'react';
 
 const CallSummary = ({ callSummaryInfo }) => {
-  console.log('CALL ', callSummaryInfo);
   return (
     <div className="callSummaryContainer">
-      <div className="title">Call Summary</div>
+      <div className="callSummaryTitle">Call Summary</div>
       <div className="callSummaryMetadata">
-        <div>Call Recording: https://us04web.zoom.us/j/{callSummaryInfo[0]._id}</div>
+        <div className="callSummaryMetadataTitle">Call Recording</div>
+        <div>https://us04web.zoom.us/j/{callSummaryInfo[0]._id}</div>
       </div>
       <div className="callSummaryScorecardContainer">
-        <div className="titleTwo">Key Talking Points Scorecard</div>
+        <div className="callSummaryScorecardTitle">Key Talking Points Scorecard</div>
         <div className="callSummaryScorecardResults">
-          <div>Overall</div>
-          <div>{callSummaryInfo[0].score}</div>
+          <div className="callSummaryScorecardResultsTitle">Overall</div>
+          <div className="callSummaryScorecardResultsScore">{callSummaryInfo[0].score.toString().replace('0.','')}%</div>
         </div>
       </div>
       <div className="callSummaryTalkingPointsContainer">
-        <div className="titleTwo">Key Talking Points Breakdown</div>
+        <div className="callSummaryTalkingPointsTitle">Key Talking Points Breakdown</div>
         <div className="callSummaryTalkingPointsResultsContainer">
           <div className="callSummaryIndividualTalkingPointContainer">
             <div>General Checkin</div>

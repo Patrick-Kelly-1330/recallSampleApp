@@ -4,8 +4,8 @@ const Menu = ({ handleMenuClick, handleSetBotVisible, handleSetAdminVisible }) =
 
   return (
     <div className="headerMenuContainer">
-      <div onClick={handleSetAdminVisible}>Call Dashboard</div>
-      <div onClick={handleSetBotVisible}>Send Bot</div>
+      <div className="headerMenuItem" onClick={handleSetAdminVisible}>Call Dashboard</div>
+      <div className="headerMenuItem" onClick={handleSetBotVisible}>Send Bot</div>
     </div>
   );
 }
