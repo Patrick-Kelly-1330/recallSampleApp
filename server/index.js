@@ -44,8 +44,12 @@ app.post('/setBotIdServerSide', (req, res) => {
 });
 
 app.post('/recallWebhook', (req, res) => {
-  // process analysis once meeting as ended
-  if (req.body.data.status.code === 'done') {
+  /* OPTIONAL webhook verification
+  To include webhook verification, add RECALLWEBHOOKVALIDATION to your local .env file and set this equal to a unique string you have created. Next, update the webhook endpoint in your Recall.ai dashboard to include this string as a query parameter.
+
+  To remove webhook verification, remove 'req.query.webhookToken === process.env.RECALLWEBHOOKVALIDATION' from the if statement in the following line
+  */
+  if (req.body.data.status.code === 'done' && req.query.webhookToken === process.env.RECALLWEBHOOKVALIDATION) {
     axios.get(`https://api.recall.ai/api/v1/bot/${currentBotId}`,  {
     headers: {
       "Authorization": 'Token ' + process.env.RECALL,
