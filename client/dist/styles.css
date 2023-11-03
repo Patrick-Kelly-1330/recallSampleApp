@@ -1,0 +1,166 @@
+/**********************************
+  Global
+ **********************************
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 1.6em;
+}
+
+.titleTwo {
+  font-size: 1.4em;
+}
+
+/**********************************
+  Header
+ **********************************
+*/
+
+.headerContainer {
+  background-color: #87c9f3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerCompanyInfoContainer {
+  display: flex;
+  column-gap: 2em;
+  padding: 0.5em 0 0.5em 1em;
+  font-size: 1.5em;
+}
+
+.headerMenuContainer {
+  padding-right: 1em;
+  position: absolute;
+  right: 5em;
+  top: 5em;
+  background-color: lightblue;
+  border: .1em solid darkblue;
+  width: 10em;
+}
+
+/**********************************
+  Main
+ **********************************
+*/
+
+.mainContainer {
+  border: .1em solid black;
+  display: flex;
+
+}
+
+/**********************************
+  Calls
+ **********************************
+*/
+
+.callsContainer {
+  background-color: #3953e6;
+  width: 35%;
+  padding-top: 1em;
+  padding-left: 2em;
+}
+
+.teamMembersHeader, .recentCallsHeader {
+  margin-bottom: 0.5em;
+}
+
+.teamMemberList {
+  padding: .2em .4em;
+  font-size: 1.1em;
+}
+
+.individualCallContainer {
+  display: flex;
+  border: .1em solid black;
+  margin-right: 4em;
+  padding: .3em .5em;
+}
+
+.individualCallContainer:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+
+.individualCallDate {
+  width: 60%;
+  padding-left: 1em;
+  font-size: 1.2em;
+}
+
+.individualCallcallName {
+  text-align: center;
+  width: 40%;
+  font-size: 1.2em;
+}
+
+.callsListContainer {
+  margin-top: 1em;
+}
+
+/**********************************
+  Call Information
+ **********************************
+*/
+
+.callSummaryContainer {
+  background-color: #87c9f3;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.callSummaryMetadata {
+  border: .1em solid black;
+  width: 100%;
+  padding-left: 2em;
+}
+
+.callSummaryScorecardContainer {
+  border: .1em solid black;
+  width: 100%;
+  padding-left: 2em;
+  text-align: center;
+}
+
+.callSummaryScorecardResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2em;
+}
+
+.callSummaryTalkingPointsContainer {
+  border: .1em solid black;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 8em;
+}
+
+.callSummaryTalkingPointsResultsContainer {
+  border: .1em solid black;
+}
+
+.callSummaryIndividualTalkingPointContainer {
+  border: .1em solid black;
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-around;
+}
+
+.trueResult {
+  background-color: green;
+}
+
+.falseResult {
+  background-color: red;
+}

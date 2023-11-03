@@ -3,12 +3,16 @@ mongoose.connect('mongodb://localhost/recallSampleDatabase');
 
 const db = mongoose.connection;
 
-const salesRep = mongoose.Schema({
-  name: String,
-  meetings: Array,
+const salesMeeting = mongoose.Schema({
+  callName: String,
+  meetingLink: String,
+  date: String,
+  score: Number,
+  talkingPointsBreakdown: Array,
 });
 
-const Test = mongoose.model('SalesReps', salesRep);
+
+const Meeting = mongoose.model('salesMeetings', salesMeeting);
 
 db.on('error', () => {
   console.log('unable to connect to mongoose');
@@ -19,10 +23,18 @@ db.once('open', () => {
 });
 
 module.exports = {
-  addUser: () => {
-    return Test.create({
-      name:'Second from App',
-      meetings: [],
+  addMeeting: (meetingTitle, url) => {
+    let currentDate = new Date().toString().slice(0,15);
+    return Meeting.create({
+      callName: meetingTitle,
+      meetingLink: url,
+      date: currentDate,
+    });
+  },
+  getMeetings: () => Meeting.find({}),
+  updateMeeting: (meetingTitle, results) => {
+    return Meeting.updateOne({ callName: meetingTitle }, {
+      talkingPointsBreakdown: results,
     });
   },
 }
