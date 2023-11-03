@@ -5,7 +5,7 @@
 
 Sample Sales Tool application leveraging [Recall's API](https://www.recall.ai/). Send the Sales bot to your meeting, end the meeting, then review the bot's analysis of your call. 
 
-![recallReview](https://github.com/Patrick-Kelly-1330/recallSampleApp/assets/51098314/19f7ea29-47bc-4c37-b78d-4dedf250e037)
+![recallReview](https://github.com/Patrick-Kelly-1330/recallSampleApp/assets/51098314/85087699-1658-4e00-b085-ecc6ab9deabf)
 
 ## Installation
 
